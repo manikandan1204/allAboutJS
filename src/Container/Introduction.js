@@ -4,7 +4,7 @@ import Editor from './Editor'
 function Introduction() {
   return (
     <div id='mainContent' className='contentStyle '>
-       &emsp;&emsp;&emsp;&emsp;JavaScript is a cross-platform, object-oriented scripting language used to make webpages interactive (e.g., having complex animations, clickable buttons, popup menus, etc.). There are also more advanced server side versions of JavaScript such as Node.js, which allow you to add more functionality to a website than downloading files (such as realtime collaboration between multiple computers). Inside a host environment (for example, a web browser), JavaScript can be connected to the objects of its environment to provide programmatic control over them.
+       &emsp;&emsp;&emsp;&emsp;JavaScript is a  cross-platform, object-oriented scripting language used to make webpages interactive (e.g., having complex animations, clickable buttons, popup menus, etc.). There are also more advanced server side versions of JavaScript such as Node.js, which allow you to add more functionality to a website than downloading files (such as realtime collaboration between multiple computers). Inside a host environment (for example, a web browser), JavaScript can be connected to the objects of its environment to provide programmatic control over them.
         <br />
         <br />
         <Editor
@@ -16,7 +16,7 @@ Client-side JavaScript extends the core language by supplying objects to control
 &emsp;&emsp;&emsp;&emsp;Server-side JavaScript extends the core language by supplying objects relevant to running JavaScript on a server. For example, server-side extensions allow an application to communicate with a database, provide continuity of information from one invocation to another of the application, or perform file manipulations on a server.
 <br />
 <br />
-&emsp;&emsp;&emsp;&emsp;This means that in the browser, JavaScript can change the way the webpage (DOM) looks. And, likewise, Node.js JavaScript on the server can respond to custom requests sent by code executed in the browser.
+&emsp;&emsp;&emsp;&emsp;This means that in the browser,JavaScript can change the way the webpage (DOM) looks. And, likewise, Node.js JavaScript on the server can respond to custom requests sent by code executed in the browser.
     </div>
   )
 }
