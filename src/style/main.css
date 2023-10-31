@@ -4,6 +4,30 @@
   box-sizing: border-box;
 }
 
+#mainContent {
+  max-height: calc(100vh - 120px);
+  overflow: scroll;
+  font-family: "Verdana", sans-serif;
+  font-size: 18px;
+  margin-top: 10px;
+}
+#mainContent .textAlignment {
+  text-indent: 50px;
+  margin-bottom: 10px;
+  line-height: 27px;
+}
+#mainContent .textAlignment > b {
+  font-size: 20px;
+}
+#mainContent .forBTSpace {
+  margin-bottom: 20px;
+  line-height: 27px;
+}
+#mainContent .forBTSpace > span {
+  font-weight: bolder;
+  font-size: 20px;
+}
+
 .landingPage {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -13,9 +37,10 @@
 .landingPage .header {
   grid-area: h;
   font-size: 20px;
-  text-align: center;
+  text-align: left;
   font-weight: bold;
   display: grid;
+  padding-left: 20px;
   align-items: center;
   height: 100%;
   background-color: #F7DF1C;
@@ -26,16 +51,23 @@
 }
 .landingPage .sidebar {
   grid-area: s;
-  background-color: #11101D;
+  background-color: #E7F2FD;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   max-height: calc(100vh - 120px);
   overflow: scroll;
+  margin-right: 15px;
 }
 .landingPage .sidebar > p {
   display: grid;
 }
+.landingPage .sidebar > p:last-child {
+  margin-bottom: 20px;
+}
+.landingPage .sidebar > p:nth-child(1) {
+  margin-top: 20px;
+}
 .landingPage .sidebar > p > a {
-  color: #fff;
+  color: #000000;
   margin: 0;
   padding: 0;
   height: 50px;
@@ -43,36 +75,51 @@
   font-weight: bold;
   position: relative;
   text-decoration: none;
-  text-align: center;
+  padding-left: 50px;
+  display: grid;
+  align-items: center;
+}
+.landingPage .sidebar > p:hover {
+  background-color: #e9ecef;
+}
+.landingPage .sidebar > p:hover > a {
+  color: #000000;
 }
 .landingPage .sidebar .subMenu {
-  background: rgba(0, 0, 0, 0.7);
+  background: #000000;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   position: absolute;
   z-index: 1000;
-  color: #fff;
   max-height: calc(100vh - 120px);
   overflow: scroll;
+  opacity: 0.9;
 }
-.landingPage .sidebar .subMenu p {
+.landingPage .sidebar .subMenu a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.landingPage .sidebar .subMenu a p {
   font-size: 18px;
   padding: 10px 50px;
 }
-.landingPage .main {
+.landingPage .sidebar .subMenu a p:hover {
+  background-color: #D0E9F1;
+  color: #000000;
+  font-weight: bold;
+}
+
+.main {
   grid-area: m;
-  background-color: #E7F2FD;
+  background-color: base_white_color;
 }
 
 .contentStyle {
-  max-height: calc(100vh - 120px);
-  overflow: scroll;
-  width: 100%;
   grid-area: m;
   background-color: #E7F2FD;
-  padding: 20px 0 20px 20px;
+  padding: 20px 20px 20px 20px;
+  border-radius: 20px;
+  max-width: 99%;
 }
 
 .codeEditor {
@@ -95,23 +142,24 @@
   grid-gap: 10px;
 }
 .codeEditor .editorBtn button {
-  color: #fff;
+  color: #ffffff;
   background-color: #000000;
   font-weight: bold;
 }
 .codeEditor #editorResultCode #resultWindow {
   height: 100%;
   overflow: scroll;
+  font-size: 15px;
 }
 .codeEditor #editorResultCode #resultWindow li {
   list-style: none;
-  padding: 5px 0px 5px 10px;
+  padding: 5px 0px 0px 10px;
 }
 .codeEditor #editorResultCode #resultWindow .log-string {
   color: #48BF0A;
 }
 .codeEditor #editorResultCode #resultWindow .log-default {
-  color: #fff;
+  color: #ffffff;
 }
 .codeEditor #editorResultCode #resultWindow .log-array {
   color: skyblue;
@@ -121,4 +169,8 @@
 }
 .codeEditor #editorResultCode #resultWindow .log-error {
   color: red;
+}
+
+.activeMenu > a:nth-child(1) {
+  color: deepskyblue !important;
 }/*# sourceMappingURL=main.css.map */

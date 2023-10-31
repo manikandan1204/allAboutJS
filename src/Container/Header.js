@@ -4,7 +4,7 @@ function Header() {
   return (
     <div id='headerContent' className='header'>
       <h1>
-        All About Javascript
+       Javascript
       </h1>
     </div>
   )

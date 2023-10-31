@@ -5,32 +5,35 @@ import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/ext-language_tools";
 
 function Editor(porps) {
-    let consoleMsges =[]
-    let [code, setCode] = useState("console.log('Welcome to Javascript Tutorial')")
-    let resultWindow = document.getElementById("resultWindow")
-    let [consoleMsg,setConsoleMsg] = useState("")
+    let consoleMsges = []
+    let [code, setCode] = useState("")
+    let [consoleMsg, setConsoleMsg] = useState("")
     function onChange(e) {
         setCode(e)
     }
-    useEffect(()=>{
-       handleResetBtn()
-    },[porps.defaultCode])
+    useEffect(() => {
+        eval(code)
+    }, [])
+
+    useEffect(() => {
+        handleResetBtn()
+    }, [porps.defaultCode])
     let console = (function (oldConsole) {
         return {
-            getType:function(val){
-                if(typeof val == "string") return "string";
-                if(typeof val == "number") return "number";
-                if(typeof val == "boolean") return "boolean";
-                if(typeof val == "function") return "function";
-                if(typeof val == "undefined") return "string";
-                if(typeof val == "object" && !Array.isArray(val) ) return "object" ;
-                if(typeof val == "object" && Array.isArray(val)) return "array";
+            getType: function (val) {
+                if (typeof val == "string") return "string";
+                if (typeof val == "number") return "number";
+                if (typeof val == "boolean") return "boolean";
+                if (typeof val == "function") return "function";
+                if (typeof val == "undefined") return "string";
+                if (typeof val == "object" && !Array.isArray(val)) return "object";
+                if (typeof val == "object" && Array.isArray(val)) return "array";
             },
-            formatOutputVal:function(val){
-                let outputMsg=""
-                switch(this.getType(val)){
+            formatOutputVal: function (val) {
+                let outputMsg = ""
+                switch (this.getType(val)) {
                     case "string":
-                        outputMsg=`${val}`
+                        outputMsg = `${val}`
                         break
                     case "array":
                         outputMsg = `Array ${JSON.stringify(val)}`
@@ -40,39 +43,39 @@ function Editor(porps) {
                         break
                     default:
                         outputMsg = val
-                        break    
+                        break
                 }
                 return outputMsg
             },
-            logMultipleValues:function(val){
+            logMultipleValues: function (val) {
                 let mulLogs = ''
-                val.forEach((item)=>{
+                val.forEach((item) => {
                     mulLogs += this.formatOutputVal(item) + ", "
                 })
                 consoleMsges.push({
-                    message:mulLogs,
-                    class:`log log-default`
+                    message: mulLogs,
+                    class: `log log-default`
                 })
-                oldConsole.log.apply(oldConsole,arguments)
+                oldConsole.log.apply(oldConsole, arguments)
                 setConsoleMsg([...consoleMsges])
                 oldConsole.log(consoleMsges)
             },
-            logSingleValue:function(val){
+            logSingleValue: function (val) {
                 oldConsole.log(val)
                 consoleMsges.push({
-                    message:this.formatOutputVal(val),
-                    class:`log log-${this.getType(val)}`
+                    message: this.formatOutputVal(val),
+                    class: `log log-${this.getType(val)}`
                 })
                 oldConsole.log(consoleMsges)
                 setConsoleMsg([...consoleMsges])
             },
             log: function (text) {
                 let argsArr = Array.from(arguments)
-                return argsArr.length !== 1 ? this.logMultipleValues(argsArr):this.logSingleValue(text)
+                return argsArr.length !== 1 ? this.logMultipleValues(argsArr) : this.logSingleValue(text)
             }
         }
     })(window.console)
-    const handleResetBtn=()=>{
+    const handleResetBtn = () => {
         setCode(porps.defaultCode)
     }
     const handleRunBtn = () => {
@@ -81,12 +84,13 @@ function Editor(porps) {
         }
         catch (e) {
             consoleMsges.push({
-                message:e,
-                class:"log-error"
+                message: e,
+                class: "log-error"
             })
+            setConsoleMsg([...consoleMsges])
         }
     }
-    const editorBtn=()=>{
+    const editorBtn = () => {
         setConsoleMsg([])
     }
     return (
@@ -103,7 +107,7 @@ function Editor(porps) {
                 showPrintMargin={true}
                 showGutter={true}
                 highlightActiveLine={true}
-                value={code}
+                value={code.trim()}
                 setOptions={{
                     enableBasicAutocompletion: true,
                     useWorker: false,
@@ -121,10 +125,10 @@ function Editor(porps) {
                 <div id="editorResultCode" className="editorResult">
                     <ul id="resultWindow">
                         {
-                            consoleMsg.length>0 && consoleMsg.map((ele,i)=>{
-                                return(
-                                    <li className={ele.class} key={ele+i}>
-                                        {">" +  "  " +ele.message}
+                            consoleMsg.length > 0 && consoleMsg.map((ele, i) => {
+                                return (
+                                    <li className={ele.class} key={ele + i}>
+                                        {">" + "  " + ele.message}
                                     </li>
                                 )
                             })
@@ -133,7 +137,6 @@ function Editor(porps) {
                 </div>
             </div>
         </div>
-
     )
 }
 
