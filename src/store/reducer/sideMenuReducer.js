@@ -53,7 +53,8 @@ const initialState = {
     "Polymorphism": "",
     "HOC": "",
     "Recursion": "",
-    "DataStructures": ""
+    "DataStructures": "",
+    "LeetCode":""
   },
   menuVisible: {
     "Introduction": false,
@@ -69,7 +70,8 @@ const initialState = {
     "Polymorphism": false,
     "HOC": false,
     "Recursion": false,
-    "Data Structures": false
+    "Data Structures": false,
+    "LeetCode":false
   }
 }
 

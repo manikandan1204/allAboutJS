@@ -1,6 +1,6 @@
 import React from 'react'
 import EveryComp from '../../Components/Array/Every'
-function ForEach() {
+function Every() {
   return (
     <div id='mainContent' className='main'>
       <EveryComp/>
@@ -8,4 +8,4 @@ function ForEach() {
   )
 }
 
-export default ForEach
+export default Every
