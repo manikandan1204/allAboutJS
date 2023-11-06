@@ -141,6 +141,7 @@ $base_black_color:#000000;
         border: 1px solid black;
         background-color: $base_black_color;
         color: #E7F2FD;
+        max-width: 500px;
     }
     .editorBtn {
         display: grid;
@@ -190,5 +191,12 @@ $base_black_color:#000000;
 .activeMenu{
     >a:nth-child(1){
         color: deepskyblue !important;
+    }
+}
+.orderListStyle{
+    margin-left: 35px;
+    li{
+        margin: 10px 0px;
+        line-height: 27px;
     }
 }

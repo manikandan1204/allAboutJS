@@ -133,6 +133,7 @@
   border: 1px solid black;
   background-color: #000000;
   color: #E7F2FD;
+  max-width: 500px;
 }
 .codeEditor .editorBtn {
   display: grid;
@@ -173,4 +174,12 @@
 
 .activeMenu > a:nth-child(1) {
   color: deepskyblue !important;
+}
+
+.orderListStyle {
+  margin-left: 35px;
+}
+.orderListStyle li {
+  margin: 10px 0px;
+  line-height: 27px;
 }/*# sourceMappingURL=main.css.map */
