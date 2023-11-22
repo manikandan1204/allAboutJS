@@ -6,9 +6,17 @@ $base_black_color:#000000;
     padding: 0;
     box-sizing: border-box; // not neccesary
 }
+
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: grey;
+    border-radius: 10px;
+}
 #mainContent{
     max-height: calc(100vh - 120px);
-    overflow: scroll;
+    overflow-y: scroll;
     font-family: 'Verdana', sans-serif;
     font-size: 18px; 
     margin-top: 10px;
@@ -59,7 +67,7 @@ $base_black_color:#000000;
         background-color: #E7F2FD;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         max-height: calc(100vh - 120px);
-        overflow: scroll;
+        overflow-y: scroll;
         margin-right: 15px;
         >p {
             &:last-child {
@@ -102,7 +110,7 @@ $base_black_color:#000000;
             position: absolute;
             z-index: 1000;
             max-height: calc(100vh - 120px);
-            overflow: scroll;
+            overflow-y: scroll;
             opacity: 0.9;
             a {
                 color: $base_white_color;
@@ -122,7 +130,7 @@ $base_black_color:#000000;
 }
 .main {
     grid-area: m;
-    background-color: base_white_color;
+    background-color: $base_white_color;
 }
 .contentStyle {
     grid-area: m;
@@ -159,7 +167,7 @@ $base_black_color:#000000;
     #editorResultCode {
         #resultWindow {
             height: 100%;
-            overflow: scroll;
+            overflow-y: scroll;
             font-size: 15px;
             li {
                 list-style: none;
