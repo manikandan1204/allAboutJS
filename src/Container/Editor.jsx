@@ -11,9 +11,6 @@ function Editor(porps) {
     function onChange(e) {
         setCode(e)
     }
-    useEffect(() => {
-        eval(code)
-    }, [])
 
     useEffect(() => {
         handleResetBtn()

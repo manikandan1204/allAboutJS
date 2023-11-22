@@ -44,7 +44,7 @@ const initialState = {
     ],
     "Arrays": ['Array.at()', 'Array.concat()', 'Array.copyWithin()', 'Array.entries()', 'Array.every()', 'Array.fill()', 'Array.filter()', 'Array.find()', 'Array.findIndex()', 'Array.findLast()', 'Array.findLastIndex()', 'Array.flat()', 'Array.flatMap()', 'Array.forEach()', 'Array.from()', 'Array.fromAsync()', 'Array.includes()', 'Array.indexOf()', 'Array.isArray()', 'Array.join()', 'Array.keys()', 'Array.lastIndexOf()', 'Array.map()', 'Array.of()', 'Array.pop()', 'Array.push()', 'Array.reduce()', 'Array.reduceRight()', 'Array.reverse()', 'Array.shift()', 'Array.slice()', 'Array.some()', 'Array.sort()', 'Array.splice()', 'Array.toLocaleString()', 'Array.toReversed()', 'Array.toSorted()', 'Array.toSpliced()', 'Array.toString()', 'Array.unshift()', 'Array.values()', 'Array.with()'],
     "Promise": "",
-    "Async/Await": "",
+    "AsyncAwait": "",
     'IIFE': "",
     "Closure": "",
     'Hoisting': "",
